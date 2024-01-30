@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<br>
+<h1 class="text-center">User Cart</h1>
+<div class="container">
+<table class="table table-bordered text-center">
+    <tr>
+        <th>Sn :</th>
+        <th>Product</th>
+        <th>Rate</th>
+        <th>Qty</th>
+        <th>Total</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let row of card_data;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{row.product_name}}</td>
+        <td>&#8377; {{row.price}}</td>
+        <td class="inc_dec">
+            <button (click)="decqty(row.product_econ_cart_id)" >-</button>
+            {{row.qty}}
+            <button (click)="incqty(row.product_econ_cart_id)">+</button>
+        </td>
+        <td class="font-weight-bold" #ttl>&#8377; {{row.price*row.qty}}</td>
+        <td >
+            <button class="btn btn-danger p-1" (click)="removeProduct(row.product_econ_cart_id )">
+                <i class="icon icon-trash"></i>
+            </button>
+        </td>
+    </tr>
+</table>
+<div class="text-right">
+    <div class="row">
+         <div class="col-11">
+            <h5>Total : <span class="ml-2">{{orderTotal}}</span></h5>
+         </div>
+    </div>
+ </div>
+
+<br>
+<div class="text-right">
+    <button class="btn btn-primary" routerLink="/confirm_order">Confirm Order</button>
+</div>
+</div>
+<br>
+<app-footer></app-footer>

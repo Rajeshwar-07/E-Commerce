@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<form [formGroup]="addressForm" (ngSubmit)="placeOrder()">
+<div class="container">
+    <div class="row mb-5" style="justify-content: center;align-items: center;">
+        <!-- <div class="col-6"> -->
+            <h1>Confirm Address</h1>
+        <!-- </div> -->
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            Enter Area 
+            <input type="text" formControlName="area" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter city 
+            <input type="text" formControlName="city" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter district 
+            <input type="text" formControlName="district" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter state 
+            <input type="text" formControlName="state" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter country 
+            <input type="text" formControlName="country" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter pincode 
+            <input type="text" formControlName="pincode" class="form-control ">
+        </div>
+        <div class="col-md-6 mb-4">
+            Enter payment_type 
+            <select formControlName="payment_type" class="form-control">
+                <option>COD</option>
+                <option>Online</option>
+            </select>
+        </div>
+       <div class="col-md-10 mt-3 text-right btn-lg">
+            <button class="btn btn-primary">Place Order</button>
+       </div>
+    </div>
+</div>
+</form>
+<br>
+<app-footer></app-footer>
